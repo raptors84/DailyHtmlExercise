@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Html exercise using vanilla JS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Daily Exercise</title>
+    <style>
+        ul {
+
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,  .dropdown:hover .dropbtn  {
+            background-color: gray;
+            
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        /* Style the header */
+        .header {
+            grid-area: header;
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        /* The grid container */
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'left left middle middle right right'
+                'footer footer footer footer footer footer';
+            /* grid-column-gap: 10px; - if you want gap between the columns */
+        }
+
+        .left,
+        .middle,
+        .right {
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Style the left column */
+        .left {
+            grid-area: left;
+            text-align: center;
+            color: white;
+            background-color: rosybrown
+        }
+
+        /* Style the middle column */
+        .middle {
+            grid-area: middle;
+            text-align: center;
+            color: white;
+            background-color: lightseagreen;
+        }
+
+        /* Style the right column */
+        .right {
+            grid-area: right;
+            text-align: center;
+            color: white;
+            background-color: lightskyblue;
+        }
+
+        /* Style the footer */
+        .footer {
+            grid-area: footer;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-areas:
+                    'header header header header header header'
+                    'left left left left left left'
+                    'middle middle middle middle middle middle'
+                    'right right right right right right'
+                    'footer footer footer footer footer footer';
+            }
+        }
+
+       li.dropdown {
+            display: inline-block;
+        
+        } 
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color:white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: gray;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">List</a>
+            <div class="dropdown-content">
+            <a href="#">DropList 1</a>
+            <a href="#">DropList 2</a>
+            <a href="#">DropList 3</a>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+    </ul>
+    <div class="grid-container">
+        <div class="header">
+            Html grid template
+        </div>
+        <div class="left">
+            this is a left column section
+        </div>
+        <div class="middle">
+            this is a middle column section
+        </div>
+        <div class="right">
+            this is a right column section
+        </div>
+        <div class="footer">
+            <p>&copy;copyright Sean K</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
